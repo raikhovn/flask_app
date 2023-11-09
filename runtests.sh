@@ -10,7 +10,7 @@ then
   exit -1
 fi
 
-
+echo "Creating db"
 docker exec $DB_CONTAINER psql -U postgres -c "DROP DATABASE IF EXISTS $DB_NAME;"
 
 docker exec $DB_CONTAINER psql -U postgres -c "CREATE DATABASE $DB_NAME;"
