@@ -21,8 +21,8 @@ formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(messag
 handler.setFormatter(formatter)
 logger.addHandler(handler)
 
-AWS_ACCESS_KEY_ID = "AKIAR6B7GXBXK2UKSWT6"
-AWS_SECRET_ACCESS_KEY= "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"
+#AWS_ACCESS_KEY_ID = {AWS_ACCESS_KEY_ID}
+#AWS_SECRET_ACCESS_KEY= {AWS_SECRET_ACCESS_KEY}
 
 
 class RECON_CODES(Enum):
