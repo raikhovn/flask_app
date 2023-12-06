@@ -1,6 +1,12 @@
 name: Build and push to ECR
 
 on:
+
+
+  workflow_run:
+    workflows: ['Python application']
+    types:
+      - completed
   push:
     branches: [ "main" ]
   pull_request:

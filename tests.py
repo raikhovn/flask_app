@@ -2,6 +2,8 @@ import re
 from typing import List
 from collections import Counter
 from enum import Enum
+from functools import reduce
+
 
 class Solution:
     @staticmethod
@@ -232,6 +234,49 @@ class Solution16:
 
         return mon
 
+class Solution17:
+    @staticmethod
+    def map_reduce_filter_comprehension():
+
+        lst = [1,2,3,4,45,16]
+
+        flt_lst = list(filter(lambda x: x > 4, lst))
+
+        map_lst = list(map(lambda x: x * 2, lst))
+
+        com_lst = ["< 3" if x < 3 else "> 3" for x in lst]
+
+    @staticmethod
+    def sums_of_nums():
+
+        # Input: nums = [1,2,3,4]
+        # Output: [1,3,6,10]
+        # Explanation: Running sum is obtained as follows: [1, 1+2, 1+2+3, 1+2+3+4]   
+        nums = [1,2,3,4] 
+        nnums = []
+        n = 0
+        for num in nums:
+            if n == 0:
+                nnums.append(num)
+            else:        
+                nnums.append(reduce(lambda x, y: x + y, nums[0:n+1]))
+            n += 1    
+
+        strs = ["hello1", "hello2", "hello3", "hello4", "hello5", "hello5"]
+        z = zip(strs[0:4], nums[0:4])
+        ns = nums.append(strs)
+        sets = set(strs)
+
+    def remove_k_elems():
+        # Input: arr = [4,3,1,1,3,3,2], k = 3
+        # Output: 2
+        # Explanation: Remove 4, 2 and either one of the two 1s or three 3s. 1 and 3 will be left.    
+        arr = [4,3,1,1,3,3,2]
+        arrc = Counter(arr)
+
+        return
+
+       
     
 def main():
     #print(Solution2.wordSubsets(words1 = ["amazon","apple","facebook","google","leetcode"], words2 = ["e","o"]) )
@@ -257,10 +302,13 @@ def main():
     #print(Solution13.replace_none_with_last_notnone([None,8, None]))
     #print(Solution14.find_mismatch_btw_2_lists(["this", "is", "my", "test"], ["this", "is", "my", "array"]))
     #print(Solution15.n_largest_dict_val({"a": 1, "b": 2, "c": 100, "d": 30}, 2))
-    print(Solution16.is_monothonic([ 1, 2, 5, 5, 8]))
-    print(Solution16.is_monothonic([ 9, 6, 6, 4, 3]))
-    print(Solution16.is_monothonic([ 1, 1, 1, 1]))
-    print(Solution16.is_monothonic([ 9, 6, 6, 4, 10]))
+    # print(Solution16.is_monothonic([ 1, 2, 5, 5, 8]))
+    # print(Solution16.is_monothonic([ 9, 6, 6, 4, 3]))
+    # print(Solution16.is_monothonic([ 1, 1, 1, 1]))
+    # print(Solution16.is_monothonic([ 9, 6, 6, 4, 10]))
+    Solution17.remove_k_elems()
+    #Solution17.map_reduce_filter_comprehension()
+    #Solution17.sums_of_nums()
 
 if __name__ == "__main__":
     main()

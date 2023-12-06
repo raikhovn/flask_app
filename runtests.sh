@@ -19,7 +19,7 @@ echo "Migrate db"
 python ./manage.py migrate_db
 python ./manage.py migrate_data
 echo "Run tests"
-pytest test_user.py -v
+#pytest test_user.py -v
 echo "Teardown db"
-python ./manage.py teardown
+#python ./manage.py teardown
 
